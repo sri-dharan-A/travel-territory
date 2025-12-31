@@ -1,0 +1,227 @@
+.b{
+    color: #2deef5;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.menu-color a{
+    color:#2deef5 !important;
+    margin-left: 10px;
+    transition: 0.3s;
+
+}
+.brand-color{
+    color: #2deef5 !important;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 700;
+}
+
+
+
+
+.menu-color .nav-link:hover{
+    
+    color:#ffffff
+}
+
+.custom-nav{
+    background-color: #0a0a0a !important;
+
+}
+#hero {
+            background: url('bg7.jpg')center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#2deef5;
+
+            
+        }
+
+        #places{
+            color: #0a0a0a;
+            
+        }
+        #packages{
+            color: #0a0a0a;
+            
+        }
+       
+
+        
+        
+
+        #outputBox {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: rgba(172, 167, 167, 0.87);
+
+    border-radius: 10px;
+
+    color: white;
+
+    display: none;
+
+}
+
+#outputImage {
+
+    width: 250px;
+
+    border-radius: 10px;
+
+    margin-top: 15px;
+}
+        .tour-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .search-box{
+    background: white;
+    border-radius: 50px;
+    padding:15px;
+}
+
+.row{
+    background-color: aliceblue;
+    
+}
+.navbar-brand{
+    color: #2deef5;
+}
+
+
+
+
+
+
+
+
+
+
+
+.activity-card {
+            transition: transform 0.3s;
+            height: 100%; /* Ensures all cards in a row are the same height */
+        }
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+        .card-img-top-container {
+            position: relative;
+            /* Ensures image has a fixed aspect ratio */
+            padding-top: 60%; 
+        }
+        .card-img-top-custom {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+        .tag-badge {
+            font-size: 0.75rem;
+            padding: 0.3em 0.6em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            
+        }
+        .tag-grey { background-color:rgba(128,128,128,0.918); color:#e6f0ff; }
+        .tag-orange { background-color: #fd7e14; color: #e6f0ff; }
+        .tag-green { background-color: #198754 ;color: #e6f0ff; }
+        .tag-pink{ background-color:rgba(177, 5, 125, 0.712); color:#e6f0ff;}
+        .tag-blue{ background-color: #0d6efd; color: #e6f0ff;}
+        .rating-stars { color: #ffc107; }
+
+
+
+        /* Subscribe Banner */
+.subscribe-box {
+    background-image: url('bg8.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    padding: 60px 40px;
+    color: white;
+}
+
+.subscribe-inner {
+    background: rgba(0,0,0,0.75);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 480px;
+}
+
+    .infinite-gallery {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+
+.scroll-container {
+    display: flex;
+    gap: 0;
+    animation: scroll 25s linear infinite;
+}
+
+.scroll-container img {
+    width: 300px;            /* Change size if needed */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .scroll-container img {
+        width: 200px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-container img {
+        width: 150px;
+        height: 120px;
+    }
+}
+
+
+      
+
+    /*hidden before scrolling*/
+    .reveal {
+        opacity:0;
+        transform:translateY(30px);
+        transition:all 0.8s ease-out;
+    }
+
+    /*visibe when scroll*/
+    .reveal.active {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+
+
+
+
+

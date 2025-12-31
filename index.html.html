@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+
+    <link rel="stylesheet"type="text/css" href="styles.css">
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
+     
+
+    <!--icon cdn-->
+     <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+
+  
+
+
+    
+</head>
+
+<body class="bg-light">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-nav fixed-top" >
+    <div class="container">
+        <a class="navbar-brand brand-color" href="#hero"><img src="globe.png"width="30"alt="travel log">  Travel Territory</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto menu-color" > 
+                <li class="nav-item "><a class="nav-link b" href="#hero">Home</a></li>
+                <li class="nav-item "><a class="nav-link b " href="#places">Tours</a></li>
+                <li class="nav-item "><a class="nav-link b " href="#packages">Packages</a></li>
+                <li class="nav-item "><a class="nav-link b " href="#subscribe">Subscriptions</a></li>
+                <li class="nav-item "><a class="nav-link b" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Login</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<!--<section id="hero">
+    <div class="text-center">
+        <h1 class="display-3 fw-bold">Explore The World</h1>
+        <p class="lead">Find the best tours & travel experiences</p>
+        <div class="search-box mt-4 d-flex gap-3">
+                    
+                    <input type="text" class="form-control" placeholder="Where To?">
+                    <input type="date" class="form-control">
+                    <button class="btn btn-success px-4">Search</button>
+
+
+                    
+
+                    </div><br>
+        <a href="#" class="btn btn-default btn-lg" style="background-color: #2deef5;">Book Now</a>
+    </div>
+
+
+
+
+</section>-->
+
+
+
+<!-- HERO SECTION -->
+
+<section id="hero" class="reveal">
+
+    <div class="text-center">
+
+
+        <h1 class="display-3 fw-bold">Explore The World</h1>
+
+        <p class="lead">Find the best tours & travel experiences</p>
+
+
+        <form id="searchForm" class="search-box mt-4 d-flex gap-3 justify-content-center">
+
+            <input type="text" id="placeInput" class="form-control w-25" placeholder="Where To?" required>
+
+            <input type="date" id="dateInput" class="form-control w-25" required>
+
+            <input type="submit" class="btn btn-success px-4" value="Search"><br><br>
+            
+        </form>
+        <button id="bookNowBtn" class="btn btn-info btn-lg mt-3 px-4">Book Now</button>
+
+        
+
+
+        <!-- RESULT BOX -->
+
+        <div id="outputBox">
+
+            <h4 id="packageTitle"></h4>
+
+            <p id="packagePrice"></p>
+
+            <img id="outputImage" src="" alt="">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- POPUP MODAL -->
+
+<div class="modal fade" id="resultModal">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+
+      <div class="modal-header bg-dark text-white">
+
+        <h5 class="modal-title">Search Result</h5>
+
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+
+      </div>
+
+
+      <div class="modal-body" id="modalMessage" style="font-size:18px;"></div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+    <!--features for traveling-->
+
+ <!--  feature 1-->
+   <section id="features" class="reveal">
+   
+   
+ <div class="container text-center my-5">
+        <div class="row g-4">
+
+
+            
+            <div class="col-md-3">
+            <img src="travel.png" width="60"class="mb-3">
+        
+            
+            <h4 class=" fw-bold mt-3">Discover Globe</h4>
+            <p class="text-muted">Find attraction, adventures & more......</p>
+        </div>
+
+          <!--feature 2-->
+          
+          
+             <div class="col-md-3">
+            <img src="handshake.png"width="60"class="mb-3">
+             
+            <h4 class="fw-bold mt-3">Enjoy deals & delights</h4>
+            <p class="text-muted">Great activities & prices......</p>
+        </div>
+    
+
+
+          <!--feature 3-->
+          
+
+           <div class="col-md-3">
+           <img src="beach.png" width="60"class="mb-3">
+            
+            <h4 class=" fw-bold mt-3">Exploring made easy</h4>
+            <p class="text-muted">Book and easy cancel for easily Exploring</p>
+        </div>
+    
+
+      <!--  feature 4-->
+        
+
+       <div class="col-md-3">
+       <img src="certificate.png" width="60"class="mb-3">
+               
+         <h4 class="fw-bold mt-3">Travel you can trust</h4>
+            <p class="text-muted">Read reviews & get reliable support</p>
+        </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+
+    
+
+
+
+
+
+
+
+<!-- POPULAR TOURS -->
+
+
+<section id="places" class="reveal" >
+<div class="container my-5">
+    <h2 class="text-center mb-4">Popular Tours</h2>
+
+    <div class="row g-4">
+         <!--Tour 1 -->
+         
+         
+        <div class="col-md-4">
+            <div class="card shadow tour-card">
+                <img src="tower.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Paris City Tour</h5>
+                    <p class="card-text">Enjoy 3 days in the city of lights.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    
+
+         <!--Tour 2 -->
+        
+         
+        <div class="col-md-4">
+            <div class="card shadow tour-card">
+                <img src="mal.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Maldives Beach</h5>
+                    <p class="card-text">Relax on beautiful crystal beaches.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    
+    
+
+        <!-- Tour 3-->
+        
+         
+        <div class="col-md-4">
+            <div class="card shadow tour-card">
+                <img src="safari.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Dubai Desert Safari</h5>
+                    <p class="card-text">Adventure with dune bashing & camel rides.</p>
+                    <a href="#" class="btn btn-primary ">Book Now</a>
+                </div>
+            </div>
+        </div>
+    
+    
+</section>
+
+
+<!--packages ..-->
+
+<!--pack 1...-->
+
+<section id="packages" class="reveal">
+     
+
+<div class="container my-5">
+        <h2 class="text-center mb-4">Popular Packages</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <div class="col">
+                <div class="card shadow-sm activity-card">
+                    <div class="card-img-top-container">
+                        <img src="pack1.jpg" class="card-img-top-custom" alt="Great Wall of China">
+                        <span class="badge bg-danger sale-badge">On Sale</span>
+                    </div>
+                    
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text text-muted mb-1 small">China</p>
+                        <h5 class="card-title fw-bold mb-2">Small Group Tour - Mutianyu Great Wall, Summer Palace </h5>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="rating-stars me-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </span>
+                            <span class="fw-bold me-1 small">5.00</span>
+                            <span class="text-muted small">(1 reviews)</span>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap mb-3">
+                          <!--  <span class="badge tag-badge tag-grey">Escorted Tour</span>
+                            <span class="badge tag-badge tag-orange">Rail Tour</span>
+                            <span class="badge tag-badge tag-blue">Tour & Cruise</span>-->
+
+                            <button class="badge tag-badge tag-grey"type="button">Escorted Tour</button>
+                            <button class="badge tag-badge tag-orange"type="button">Rail Tour</button>
+                            <button class="badge tag-badge tag-blue"type="button">Tour & Cruise</button>
+                            
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                            <div>
+                                <small class="text-muted d-block">From</small>
+                                <span class="fs-5 fw-bold text-dark">$79.00</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="text-muted small">
+                                    <i class="far fa-clock"></i> 4 nights
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--pack2...-->
+            <div class="reveal">
+
+            <div class="col">
+                <div class="card shadow-sm activity-card">
+                    <div class="card-img-top-container">
+                        <img src="pack2.jpg" class="card-img-top-custom" alt="Thailand Phi Phi Islands">
+                        <span class="badge bg-danger sale-badge">On Sale</span>
+                    </div>
+                    
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text text-muted mb-1 small">Thailand</p>
+                        <h5 class="card-title fw-bold mb-2">West Thai Wonders: Phuket, Koh Phi Phi, Rail & Beyond</h5>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="rating-stars me-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </span>
+                            <span class="fw-bold me-1 small">5.00</span>
+                            <span class="text-muted small">(2 reviews)</span>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap mb-3">
+                            <!--<span class="badge tag-badge tag-orange">Rail Tour</span>
+                            <span class="badge tag-badge tag-pink">River Cruise</span>-->
+
+                            <button class="badge tag-badge tag-orange"type="button">Rail Tour</button>
+                            <button class="badge tag-badge tag-pink"type="button">River Cruise</button>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                            <div>
+                                <small class="text-muted d-block text-decoration-line-through">$250.00</small>
+                                <span class="fs-5 fw-bold text-dark">From $210.00</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="text-muted small">
+                                    <i class="far fa-clock"></i> 2 days
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--pack 3-->
+            <div class="reveal">
+
+
+            <div class="col">
+                <div class="card shadow-sm activity-card">
+                    <div class="card-img-top-container">
+                        <img src="pack3.jpg" class="card-img-top-custom" alt="Bangkok,Thailand">
+                        <span class="badge bg-danger sale-badge">On Sale</span>
+                    </div>
+                    
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text text-muted mb-1 small">Bangkok,Thailand</p>
+                        <h5 class="card-title fw-bold mb-2">Sunset Shares: A Coastal Beach city</h5>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="rating-stars me-1">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="fw-bold me-1 small">0</span>
+                            <span class="text-muted small">(0 reviews)</span>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap mb-3">
+                            <!--<span class="badge tag-badge tag-orange">Rail Tour</span>
+                            <span class="badge tag-badge tag-green">Wildlife</span>-->
+                            <button class="badge tag-badge tag-orange"type="button">Rail Tour</button>
+                            <button class="badge tag-badge tag-green"type="button">Wildlife</button>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                            <div>
+                                <small class="text-muted d-block text-decoration-line-through">$99.00</small>
+                                <span class="fs-5 fw-bold text-dark">From $79.00</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="text-muted small">
+                                    <i class="far fa-clock"></i> 3 days - 2 nights
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+
+        
+
+            <!--pack 4....-->
+            <div class="reveal">
+            
+            <div class="col">
+                <div class="card shadow-sm activity-card">
+                    <div class="card-img-top-container">
+                        <img src="pack4.jpg" class="card-img-top-custom" alt="Great Wall of China">
+                        <span class="badge bg-danger sale-badge">On Sale</span>
+                    </div>
+                    
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text text-muted mb-1 small">Tokyo,Japan</p>
+                        <h5 class="card-title fw-bold mb-2">Cherry Blossom and Ancient Times Experiences </h5>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="rating-stars me-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </span>
+                            <span class="fw-bold me-1 small">5.00</span>
+                            <span class="text-muted small">(3 reviews)</span>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap mb-3">
+                          <!--  <span class="badge tag-badge tag-grey">Escorted Tour</span>
+                            <span class="badge tag-badge tag-orange">Rail Tour</span>
+                            <span class="badge tag-badge tag-blue">Tour & Cruise</span>-->
+
+                            
+                            <button class="badge tag-badge tag-orange"type="button">Rail Tour</button>
+                            <button class="badge tag-badge tag-green"type="button">Wildlife</button>
+                            
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                            <div>
+                                <small class="text-muted d-block">From</small>
+                                <span class="fs-5 fw-bold text-dark">$79.00</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="text-muted small">
+                                    <i class="far fa-clock"></i> 4 nights
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!--pack 5...-->
+            <div class="reveal">
+
+            <div class="col">
+                <div class="card shadow-sm activity-card">
+                    <div class="card-img-top-container">
+                        <img src="pack5.jpg" class="card-img-top-custom" alt="Thailand Phi Phi Islands">
+                        <span class="badge bg-danger sale-badge">On Sale</span>
+                    </div>
+                    
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text text-muted mb-1 small">Mauritius</p>
+                        <h5 class="card-title fw-bold mb-2">Mountain Sunrise Guided Hike and Climb</h5>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="rating-stars me-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </span>
+                            <span class="fw-bold me-1 small">3.00</span>
+                            <span class="text-muted small">(2 reviews)</span>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap mb-3">
+                            <!--<span class="badge tag-badge tag-orange">Rail Tour</span>
+                            <span class="badge tag-badge tag-pink">River Cruise</span>-->
+
+                            <button class="badge tag-badge tag-grey"type="button">Escorted Tour</button>
+                            <button class="badge tag-badge tag-orange"type="button">Rail Tour</button>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                            <div>
+                                <small class="text-muted d-block text-decoration-line-through">$280.00</small>
+                                <span class="fs-5 fw-bold text-dark">From $250.00</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="text-muted small">
+                                    <i class="far fa-clock"></i> 5 days - 4 nights
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--pack 6..-->
+            <div class="reveal">
+            <div class="col">
+                <div class="card shadow-sm activity-card">
+                    <div class="card-img-top-container">
+                        <img src="pack6.jpg" class="card-img-top-custom" alt="Bangkok,Thailand">
+                        <span class="badge bg-danger sale-badge">On Sale</span>
+                    </div>
+                    
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text text-muted mb-1 small">Theme park,Singapore</p>
+                        <h5 class="card-title fw-bold mb-2">Alphine Gateway for Mountain Lovers</h5>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="rating-stars me-1">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="fw-bold me-1 small">0</span>
+                            <span class="text-muted small">(0 reviews)</span>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap mb-3">
+                            <!--<span class="badge tag-badge tag-orange">Rail Tour</span>
+                            <span class="badge tag-badge tag-green">Wildlife</span>-->
+                            <button class="badge tag-badge tag-orange"type="button">Rail Tour</button>
+                            <button class="badge tag-badge tag-pink"type="button">River Cruise</button>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-auto">
+                            <div>
+                                <small class="text-muted d-block text-decoration-line-through">$80.00</small>
+                                <span class="fs-5 fw-bold text-dark">From $60.00</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="text-muted small">
+                                    <i class="far fa-clock"></i> 5 days - 4 nights
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            </div>
+    </div>
+</div>
+</section>
+
+            <!-- ========== INFINITE SCROLL GALLERY ========== -->
+
+            <section id="imagesss" class="reveal">
+<div class="infinite-gallery">
+    <div class="scroll-container">
+        <!-- Row 1 (duplicate images for endless effect) -->
+        <img src="bali.jpg">
+        <img src="pack6.jpg">
+        <img src="keralaa.jpg">
+        <img src="pack4.jpg">
+        <img src="pack1.jpg">
+        <img src="pack2.jpg">
+        <img src="mal.jpg">
+        <img src="pack3.jpg">
+        <img src="safari.jpg">
+        <img src="pack5.jpg">
+
+        <!-- Duplicate row for infinite loop -->
+       <img src="bali.jpg">
+        <img src="pack6.jpg">
+        <img src="keralaa.jpg">
+        <img src="pack4.jpg">
+        <img src="pack1.jpg">
+        <img src="pack2.jpg">
+        <img src="mal.jpg">
+        <img src="pack3.jpg">
+        <img src="safari.jpg">
+        <img src="pack5.jpg">
+    </div>
+</div>
+</section>
+
+<!-- =======================
+SUBSCRIBE SECTION
+======================= -->
+<section id="subscribe" class="reveal" >
+
+<div class="container py-5">
+    <div class="subscribe-box">
+
+        <div class="subscribe-inner">
+            <h2 class="fw-bold">Subscribe & Get 20% Off</h2>
+            <p class="mb-4">
+                Join our newsletter and discover new destinations.  
+                Get 20% off at our online shop + weekly travel tips.
+            </p>
+
+            <div class="input-group">
+                <input type="email" class="form-control p-3" placeholder="Your email address">
+                <button class="btn btn-success px-4">Sign Up</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</section>
+
+<!-- FOOTER--> 
+ 
+<footer class="bg-dark text-white text-center py-4 fade-in">
+    <p class="mb-1">Follow Us</p>
+
+    <div class="mb-3">
+        <a href="#" class="text-white mx-2"><i class="fab fa-facebook fa-xl"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram fa-xl"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-xl"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-youtube fa-xl"></i></a>
+    </div>
+
+    <p class="m-0">© 2025 Travel Territory | All Rights Reserved</p>
+</footer>
+
+
+
+
+                
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+           
+
+<!--modal for login-->
+
+
+<div class="modal fade" id="loginModal" tabindex="-1">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content p-3">
+
+
+      <div class="modal-header">
+
+        <h5 class="modal-title">Login</h5>
+
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+
+      </div>
+
+
+      <div class="modal-body">
+        <form id="loginForm">
+
+          <div class="mb-3">
+
+            <label>Email</label>
+
+            <input type="email" class="form-control" placeholder="Enter Email" required>
+
+          </div>
+
+
+          <div class="mb-3">
+
+            <label>Password</label>
+
+            <input type="password" class="form-control" placeholder="Enter Password" required>
+
+          </div>
+
+
+          <button type="submit"class="btn btn-primary w-100">Login</button>
+
+        </form>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit",function(e){
+        e.preventDefault();
+
+        alert("login Successfully!");
+        //close modal after alert
+        var modal=bootstrap.Modal.getInstance(document.getElementById("loginModal"));
+        modal.hide();
+
+    });
+</script>
+
+<script>
+
+// PACKAGE DATA
+
+const packages = {
+
+    china: { price: "₹45,000", img: "bali.jpg", link: "china.html" },
+
+    india: { price: "₹25,000", img: "slide3.jpg", link: "india.html" },
+
+    bangkok: { price: "₹55,000", img: "bang.jpg", link: "bangkok.html" },
+
+    malaysia: { price: "₹48,000", img: "pack4.jpg", link: "malaysia.html" },
+
+    singapore: { price: "₹60,000", img: "pack6.jpg", link: "singapore.html" },
+
+    dubai: { price: "₹75,000", img: "safari.jpg", link: "dubai.html" },
+
+    japan: { price: "₹90,000", img: "mal.jpg", link: "japan.html" }
+
+};
+
+
+const form = document.getElementById("searchForm");
+
+const modal = new bootstrap.Modal(document.getElementById("resultModal"));
+
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+
+    let place = document.getElementById("placeInput").value.trim().toLowerCase();
+
+    let date = document.getElementById("dateInput").value;
+
+    let modalMsg = document.getElementById("modalMessage");
+
+    let output = document.getElementById("outputBox");
+
+
+    if (packages[place]) {
+
+        modalMsg.innerHTML = "✔ Package Available for <b>" + place.toUpperCase() + "</b> on " + date;
+
+
+        document.getElementById("packageTitle").innerHTML = place.toUpperCase();
+
+        document.getElementById("packagePrice").innerHTML = "Price: " + packages[place].price;
+
+        document.getElementById("outputImage").src = packages[place].img;
+
+
+        output.style.display = "block";
+
+    } 
+
+    else {
+
+        modalMsg.innerHTML = "✘ Package Unavailable";
+
+        output.style.display = "none";
+
+    }
+
+
+    modal.show();
+
+});
+
+
+
+// BOOK NOW BUTTON EVENT
+
+document.getElementById("bookNowBtn").addEventListener("click", function () {
+
+
+    let place = document.getElementById("placeInput").value.trim().toLowerCase();
+
+
+    if (packages[place]) {
+
+        window.location.href = packages[place].link; // redirect to package page
+
+    } else {
+
+        alert("Please search a valid package first!");
+
+    }
+
+});
+
+
+    document.getElementById("bookNowBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    alert("Booking Confirmed - Adventures Awaits!");
+});
+
+
+
+
+
+
+
+</script>
+
+<!--reveal on scroll-->
+
+<script>
+    function revealOnScroll() {
+        const elements = document.querySelectorAll('.reveal');
+
+        elements.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            const revealPoint = 150; // adjust bigger/smaller to delay reveal
+
+            if (elementTop < windowHeight - revealPoint) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+   /* scrollreveal().reveal('.section',{reset:true});
+    scrollreveal().reveal('footer',{delay:200});*/
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html> 
+
+
+
+
+
+
